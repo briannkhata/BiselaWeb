@@ -1,31 +1,127 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Dashboard";
 }
+<div class="row">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-stat yellow">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    @ViewBag.products
+                </div>
+                <div class="desc">
+                    Products
+                </div>
+            </div>
+            <a class="more" href="">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-stat grey">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    @ViewBag.categories
+                </div>
+                <div class="desc">
+                    Categories
+                </div>
+            </div>
+            <a class="more" href="">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-stat blue-madison">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    @ViewBag.brands
+                </div>
+                <div class="desc">
+                    Brands
+                </div>
+            </div>
+            <a class="more" href="">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+
 </div>
+
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-stat blue">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    @ViewBag.shops
+                </div>
+                <div class="desc">
+                    Shops
+                </div>
+            </div>
+            <a class="more" href="">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-stat yellow">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    @ViewBag.suppliers
+                </div>
+                <div class="desc">
+                    Suppliers
+                </div>
+            </div>
+            <a class="more" href="">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard-stat grey">
+            <div class="visual">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    00
+                </div>
+                <div class="desc">
+                    Customers
+                </div>
+            </div>
+            <a class="more" href="">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
     </div>
 </div>
+
+
