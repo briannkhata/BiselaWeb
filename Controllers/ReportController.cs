@@ -13,5 +13,20 @@ namespace BiselaWeb.Controllers
         {
             return View();
         }
+
+        public ActionResult Stock()
+        {
+            return View();
+        }
+
+        public ActionResult Sales()
+        {
+            return View();
+        }
+
+        public ActionResult Receivings()
+        {
+            return View();
+        }
     }
 }
