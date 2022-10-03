@@ -13,35 +13,29 @@
                     <thead>
                         <tr>
                             <th>Product Code</th>
-                            <th>Product Name</th>
-                            <th>Description</th>
-                            <th>Brand</th>
-                            <th>Category</th>
-                            <th>Order Price</th>
+                            <th>Selling Price</th>
+                            <th>Discount</th>
                             <th>Qty</th>
+                            <th>Tax</th>
                             <th>Total Price</th>
-                            <th>Receiving Date</th>
-                            <th>PO</th>
-                            <th>Supplier</th>
+                            <th>Sale Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in ViewBag.receivings)
+
+                        @foreach (var item in ViewBag.vats)
                         {
                             <tr>
                                 <td>@item.ProductCode</td>
-                                <td>@item.ProductName</td>
-                                <td>@item.Description</td>
-                                <td>@item.CategoryName</td>
-                                <td>@item.BrandName</td>
-                                <td>@string.Format("{0:C}", item.OrderPrice).Trim('$')</td>
+                                <td>@string.Format("{0:C}", item.SellingPrice).Trim('$')</td>
+                                <td>@string.Format("{0:C}", item.Discount).Trim('$')</td>
                                 <td>@item.Qty</td>
+                                <td>@string.Format("{0:C}", item.TaxValue).Trim('$')</td>
                                 <td>@string.Format("{0:C}", item.SoldPrice).Trim('$')</td>
-                                <td>@item.ReceivingDate.ToString("dd/M/yyyy")</td>
-                                <td>@item.PurchaseOrder</td>
-                                <td>@item.Supplier</td>
+                                <td>@item.DateSold.ToString("dd/M/yyyy")</td>
                             </tr>
                         }
+
                     </tbody>
                 </table>
             </div>

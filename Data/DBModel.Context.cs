@@ -61,7 +61,6 @@ namespace BiselaWeb.Data
         public virtual DbSet<vwPaymentType> vwPaymentTypes { get; set; }
         public virtual DbSet<vwProduct> vwProducts { get; set; }
         public virtual DbSet<vwReceivingCart> vwReceivingCarts { get; set; }
-        public virtual DbSet<vwReceivingReport> vwReceivingReports { get; set; }
         public virtual DbSet<vwSalesReport> vwSalesReports { get; set; }
         public virtual DbSet<vwShop> vwShops { get; set; }
         public virtual DbSet<vwStockReport> vwStockReports { get; set; }
@@ -70,5 +69,6 @@ namespace BiselaWeb.Data
         public virtual DbSet<vwUnit> vwUnits { get; set; }
         public virtual DbSet<vwUpdateStock> vwUpdateStocks { get; set; }
         public virtual DbSet<vwUser> vwUsers { get; set; }
+        public virtual DbSet<vwReceivingReport> vwReceivingReports { get; set; }
     }
 }

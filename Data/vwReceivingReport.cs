@@ -22,7 +22,6 @@ namespace BiselaWeb.Data
         public Nullable<double> OrderPrice { get; set; }
         public Nullable<double> Qty { get; set; }
         public Nullable<double> TotalPrice { get; set; }
-        public Nullable<System.DateTime> ExpiryDate { get; set; }
         public System.DateTime ReceivingDate { get; set; }
         public string Supplier { get; set; }
         public string PurchasingOrder { get; set; }

@@ -68,5 +68,19 @@ namespace BiselaWeb.Controllers
             }
             return View();
         }
+
+        public ActionResult FilterVat()
+        {
+            DateTime FromDate = DateTime.Parse(Request.Form["FromDate"]);
+            DateTime ToDate = DateTime.Parse(Request.Form["ToDate"]);
+           
+
+            ViewBag.Title = "VAT For | " + FromDate.ToString("dd/M/yyyy") + " To " + ToDate.ToString("dd/M/yyyy");
+            using (db = new BEntities())
+            {
+                ViewBag.vats = db.vwSalesReports.Where(x => x.DateSold >= FromDate && x.DateSold <= ToDate).ToList();
+            }
+            return View();
+        }
     }
 }
