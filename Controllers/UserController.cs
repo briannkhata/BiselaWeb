@@ -60,9 +60,7 @@ namespace Kweb.Controllers
                         UserName = Request.Form["UserName"],
                         Email = Request.Form["Email"],
                         Phone = Request.Form["Phone"],
-                        Gender = Request.Form["Gender"],
                         PassWord = Request.Form["Phone"],
-                        ShopId = short.Parse(Request.Form["ShopId"]),
                     };
 
                     if (user.UserId > 0)
@@ -97,7 +95,6 @@ namespace Kweb.Controllers
                     Name = userSingle.Name,
                     Email = userSingle.Email,
                     Phone = userSingle.Phone,
-                    Gender = userSingle.Gender,
                 };
             }
             return View("Create", userDetails);
