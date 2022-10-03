@@ -3,7 +3,6 @@
 }
 <div class="row">
     <div class="col-md-12">
-        <!-- BEGIN EXAMPLE TABLE PORTLET-->
         <div class="portlet box grey" style="border:1px solid #E5E5E5;">
             <div class="portlet-title">
                 <div class="caption">
@@ -27,7 +26,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         @foreach (var item in ViewBag.stock)
                         {
                             <tr>
@@ -41,14 +39,11 @@
                                 <td>@item.ExpiryDate.ToString("dd/M/yyyy")</td>
                                 <td>@string.Format("{0:C}", item.SellingPrice).Trim('$')</td>
                             </tr>
-
                         }
-
                     </tbody>
                 </table>
             </div>
         </div>
-        <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
 

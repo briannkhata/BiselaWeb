@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounts">
           <Key>
             <PropertyRef Name="AccountId" />
@@ -505,6 +505,10 @@ warning 6002: The table/view 'bisela.dbo.vwSalesReport' does not have a primary 
           <Property Name="TaxValue" Type="float" Nullable="false" />
           <Property Name="SoldPrice" Type="float" Nullable="false" />
           <Property Name="DateSold" Type="datetime" Nullable="false" />
+          <Property Name="SaleType" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentTypeId" Type="int" />
+          <Property Name="SoldBy" Type="int" />
+          <Property Name="ShopId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'bisela.dbo.vwShops' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -915,7 +919,11 @@ warning 6002: The table/view 'bisela.dbo.vwUsers' does not have a primary key de
     [vwSalesReport].[Qty] AS [Qty], 
     [vwSalesReport].[TaxValue] AS [TaxValue], 
     [vwSalesReport].[SoldPrice] AS [SoldPrice], 
-    [vwSalesReport].[DateSold] AS [DateSold]
+    [vwSalesReport].[DateSold] AS [DateSold], 
+    [vwSalesReport].[SaleType] AS [SaleType], 
+    [vwSalesReport].[PaymentTypeId] AS [PaymentTypeId], 
+    [vwSalesReport].[SoldBy] AS [SoldBy], 
+    [vwSalesReport].[ShopId] AS [ShopId]
     FROM [dbo].[vwSalesReport] AS [vwSalesReport]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwShops" EntityType="Self.vwShops" store:Type="Views" store:Schema="dbo">
@@ -1037,8 +1045,7 @@ warning 6002: The table/view 'bisela.dbo.vwUsers' does not have a primary key de
             <End Role="Stocks" EntitySet="Stocks" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1530,6 +1537,10 @@ warning 6002: The table/view 'bisela.dbo.vwUsers' does not have a primary key de
           <Property Name="TaxValue" Type="Double" Nullable="false" />
           <Property Name="SoldPrice" Type="Double" Nullable="false" />
           <Property Name="DateSold" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SaleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentTypeId" Type="Int32" />
+          <Property Name="SoldBy" Type="Int32" />
+          <Property Name="ShopId" Type="Int32" />
         </EntityType>
         <EntityType Name="vwShop">
           <Key>
@@ -2302,6 +2313,10 @@ warning 6002: The table/view 'bisela.dbo.vwUsers' does not have a primary key de
           <EntitySetMapping Name="vwSalesReports">
             <EntityTypeMapping TypeName="BModel.vwSalesReport">
               <MappingFragment StoreEntitySet="vwSalesReport">
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="SoldBy" ColumnName="SoldBy" />
+                <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+                <ScalarProperty Name="SaleType" ColumnName="SaleType" />
                 <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />

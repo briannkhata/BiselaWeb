@@ -27,6 +27,12 @@ namespace BiselaWeb.Controllers
 
         public ActionResult Sales()
         {
+            using (db = new BEntities())
+            {
+                ViewBag.paytypes = db.PaymentTypes.ToList();
+                ViewBag.users = db.Users.Where(x=>x.Deleted == 0).ToList();
+                ViewBag.saletypes = db.Sales.GroupBy(x=>x.SaleType).ToList();
+            }
             return View();
         }
 
@@ -39,6 +45,11 @@ namespace BiselaWeb.Controllers
         {
             DateTime FromDate = DateTime.Parse(Request.Form["FromDate"]);
             DateTime ToDate = DateTime.Parse(Request.Form["ToDate"]);
+            var SaleType = Request.Form["SaleType"];
+            var PaymentTypeId = Request.Form["PaymentTypeId"];
+            var UserId = Request.Form["UserId"];
+
+            ViewBag.Title = "Sales For | " + FromDate.ToString("dd/M/yyyy") + " To " + ToDate.ToString("dd/M/yyyy");
             using (db = new BEntities())
             {
                 ViewBag.sales = db.vwSalesReports.Where(x => x.DateSold >= FromDate && x.DateSold <= ToDate).ToList();
