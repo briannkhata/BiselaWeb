@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="portlet-body form">
-        <form action="@Url.Action("Create","Product")" method="post" class="horizontal-form">
+        <form action="@Url.Action("FilterSales","Report")" method="post" class="horizontal-form">
             <div class="form-body">
                 <br>
                 <div class="row">
@@ -31,21 +31,6 @@
                         </div>
                     </div>
 
-                    @*<div class="col-md-4">
-            <div class="form-group">
-                <label class="control-label">Tax</label>
-                <select class="form-control" name="TaxTypeId" required>
-                    <option selected="selected" disabled>Option</option>
-                    @if (Model.taxTypes != null)
-                    {
-                        foreach (var item in Model.taxTypes)
-                        {
-                            <option @(Model.TaxTypeId == item.TaxTypeId ? "selected" : "") value="@item.TaxTypeId">@item.TaxTypeName</option>
-                        }
-                    }
-                </select>
-            </div>
-        </div>*@
 
                 </div>
             </div>

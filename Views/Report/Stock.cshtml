@@ -1,58 +1,54 @@
-﻿
-@{
-    ViewBag.Title = "Filter VAT Tax";
+﻿@{
+    ViewBag.Title = "Stock Report";
 }
-
-<div class="portlet box grey" style="border:1px solid #E5E5E5;">
-    <div class="portlet-title">
-        <div class="caption">
-            @ViewBag.Title
-        </div>
-    </div>
-    <div class="portlet-body form">
-        <form action="@Url.Action("Create","Product")" method="post" class="horizontal-form">
-            <div class="form-body">
-                <br>
-                <div class="row">
-
-
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label">From Date</label>
-                            <input type="date" class="form-control" name="FromDate" />
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="control-label">To Date</label>
-                            <input type="date" class="form-control" name="ToDate" />
-                        </div>
-                    </div>
-
-                    @*<div class="col-md-4">
-            <div class="form-group">
-                <label class="control-label">Tax</label>
-                <select class="form-control" name="TaxTypeId" required>
-                    <option selected="selected" disabled>Option</option>
-                    @if (Model.taxTypes != null)
-                    {
-                        foreach (var item in Model.taxTypes)
-                        {
-                            <option @(Model.TaxTypeId == item.TaxTypeId ? "selected" : "") value="@item.TaxTypeId">@item.TaxTypeName</option>
-                        }
-                    }
-                </select>
-            </div>
-        </div>*@
-
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey" style="border:1px solid #E5E5E5;">
+            <div class="portlet-title">
+                <div class="caption">
+                    @ViewBag.Title
                 </div>
             </div>
+            <div class="portlet-body">
 
-            <div class="form-actions left">
-                <button type="submit" class="btn default blue-stripe"> Filter</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Product Code</th>
+                            <th>Product Name</th>
+                            <th>Description</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Shop Qty</th>
+                            <th>Stores Qty</th>
+                            <th>Expiry Date</th>
+                            <th>Selling Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in ViewBag.stock)
+                        {
+                            <tr>
+                                <td>@item.ProductCode</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.Description</td>
+                                <td>@item.CategoryName</td>
+                                <td>@item.BrandName</td>
+                                <td>@item.Shop</td>
+                                <td>@item.Stores</td>
+                                <td>@item.ExpiryDate.ToString("dd/M/yyyy")</td>
+                                <td>@string.Format("{0:C}", item.SellingPrice).Trim('$')</td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
             </div>
-        </form>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
     </div>
 </div>
+
