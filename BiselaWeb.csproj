@@ -345,6 +345,7 @@
     <Content Include="Views\Report\Sales.cshtml" />
     <Content Include="Views\Report\Receivings.cshtml" />
     <Content Include="Views\Report\FilterSales.cshtml" />
+    <Content Include="Views\Report\FilterReceivings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

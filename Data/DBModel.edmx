@@ -479,7 +479,6 @@ warning 6002: The table/view 'bisela.dbo.vwReceivingReport' does not have a prim
           <Property Name="OrderPrice" Type="float" />
           <Property Name="Qty" Type="float" />
           <Property Name="TotalPrice" Type="float" />
-          <Property Name="ExpiryDate" Type="datetime" />
           <Property Name="ReceivingDate" Type="datetime" Nullable="false" />
           <Property Name="Supplier" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PurchasingOrder" Type="varchar(max)" />
@@ -911,7 +910,6 @@ warning 6002: The table/view 'bisela.dbo.vwUsers' does not have a primary key de
     [vwReceivingReport].[OrderPrice] AS [OrderPrice], 
     [vwReceivingReport].[Qty] AS [Qty], 
     [vwReceivingReport].[TotalPrice] AS [TotalPrice], 
-    [vwReceivingReport].[ExpiryDate] AS [ExpiryDate], 
     [vwReceivingReport].[ReceivingDate] AS [ReceivingDate], 
     [vwReceivingReport].[Supplier] AS [Supplier], 
     [vwReceivingReport].[PurchasingOrder] AS [PurchasingOrder], 
@@ -2330,7 +2328,6 @@ warning 6002: The table/view 'bisela.dbo.vwUsers' does not have a primary key de
                 <ScalarProperty Name="OrderPrice" ColumnName="OrderPrice" />
                 <ScalarProperty Name="Qty" ColumnName="Qty" />
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
-                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

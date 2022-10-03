@@ -57,7 +57,6 @@ namespace BiselaWeb.Controllers
             return View();
         }
 
-
         public ActionResult FilterReceivings()
         {
             DateTime FromDate = DateTime.Parse(Request.Form["FromDate"]);
