@@ -37,8 +37,8 @@ namespace BiselaWeb.Controllers
 
         public ActionResult FilterSales()
         {
-           var FromDate = Request.Form["FromDate"];
-           var ToDate = Request.Form["ToDate"];
+            DateTime FromDate = DateTime.Parse(Request.Form["FromDate"]);
+            DateTime ToDate = DateTime.Parse(Request.Form["ToDate"]);
             using (db = new BEntities())
             {
                 ViewBag.sales = db.vwSalesReports.Where(x => x.DateSold >= FromDate && x.DateSold <= ToDate).ToList();
