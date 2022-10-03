@@ -56,5 +56,18 @@ namespace BiselaWeb.Controllers
             }
             return View();
         }
+
+
+        public ActionResult FilterReceivings()
+        {
+            DateTime FromDate = DateTime.Parse(Request.Form["FromDate"]);
+            DateTime ToDate = DateTime.Parse(Request.Form["ToDate"]);
+            ViewBag.Title = "Receivings For | " + FromDate.ToString("dd/M/yyyy") + " To " + ToDate.ToString("dd/M/yyyy");
+            using (db = new BEntities())
+            {
+                ViewBag.receivings = db.vwReceivingReports.Where(x => x.ReceivingDate >= FromDate && x.ReceivingDate <= ToDate).ToList();
+            }
+            return View();
+        }
     }
 }

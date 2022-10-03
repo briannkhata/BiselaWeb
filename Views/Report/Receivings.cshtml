@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Filter VAT Tax";
+    ViewBag.Title = "Filter Receivings";
 }
 
 <div class="portlet box grey" style="border:1px solid #E5E5E5;">
@@ -10,12 +10,10 @@
         </div>
     </div>
     <div class="portlet-body form">
-        <form action="@Url.Action("Create","Product")" method="post" class="horizontal-form">
+        <form action="@Url.Action("FilterReceivings","Report")" method="post" class="horizontal-form">
             <div class="form-body">
                 <br>
                 <div class="row">
-
-
 
                     <div class="col-md-6">
                         <div class="form-group">
@@ -31,7 +29,6 @@
                         </div>
                     </div>
 
-         
                 </div>
             </div>
 
