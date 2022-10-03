@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Kweb.Data.vwUser>
+@{
+    ViewBag.Title = "Users";
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey" style="border:1px solid #E5E5E5;">
+            <div class="portlet-title">
+                <div class="caption">
+                    @ViewBag.Title
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <br>
+                        <div class="col-md-12">
+                            <a href="@Url.Action("create", "User")" class="btn default green-stripe">
+                                Add New
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>UserName</th>
+                            <th>Shop</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Physical Address</th>
+                            <th>Contact Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model.ToList())
+                            {
+                        <tr>
+                            <td>@item.UserName - @item.Gender <br /> @item.RoleName - @item.UserTypeName</td>
+                            <td>@item.UserName</td>
+                            <td>@item.ShopName</td>
+                            <td>@item.Phone <br /> @item.AltPhone</td>
+                            <td>@item.Email <br /> @item.AltEmail</td>
+                            <td>@item.PhysicalAddress</td>
+                            <td>@item.ContactAddress</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="@Url.Action("Edit", "User", new { id = item.UserId })" class="btn btn-sm default green-stripe"><i class="fa fa-edit"></i></a>
+                                    <a href="@Url.Action("Delete", "User", new { id = item.UserId })" class="btn btn-sm default red-stripe"><i class="fa fa-times-circle"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                            }
+                        }
+                        else
+                        {
+                            <Caption>No Data is found!</Caption>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+

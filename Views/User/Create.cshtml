@@ -1,0 +1,145 @@
+﻿@model Kweb.Models.UserModel
+
+@{
+    ViewBag.Title = "Create User";
+}
+
+<div class="portlet box grey" style="border:1px solid #E5E5E5;">
+    <div class="portlet-title">
+        <div class="caption">
+            @ViewBag.Title
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form action="@Url.Action("Create","User")" method="post" class="horizontal-form">
+            <div class="form-body">
+                <br>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label class="control-label">Name</label>
+                            <input type="text" name="Name" class="form-control" value="@Model.Name" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">UserType</label>
+                            <select class="form-control" name="UserTypeId" required>
+                                <option selected="selected" disabled>Option</option>
+                                @if (Model.userTypes != null)
+                                {
+                                    foreach (var item in Model.userTypes)
+                                    {
+                                       <option @(Model.UserTypeId == item.UserTypeId ? "selected" : "") value="@item.UserTypeId">@item.UserTypeName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label class="control-label">User Name</label>
+                            <input type="text" name="UserName" class="form-control" value="@Model.UserName" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label">Gender</label>
+                            <select class="form-control" name="Gender" required>
+                                <option selected="selected" disabled>Option</option>
+                                @if (Model.genders != null)
+                                {
+                                    foreach (var item in Model.genders)
+                                    {
+                                        <option @(Model.Gender == item.ToString() ? "selected" : "") value="Male">@item.ToString()</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Phone</label>
+                            <input type="tel" name="Phone" class="form-control" value="@Model.Phone" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Alt Phone</label>
+                            <input type="tel" name="AltPhone" class="form-control" value="@Model.AltPhone">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Email</label>
+                            <input type="email" name="Email" class="form-control" value="@Model.Email" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Alt Email</label>
+                            <input type="email" name="AltEmail" class="form-control" value="@Model.AltEmail">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Role</label>
+                            <select class="form-control" name="RoleId" required>
+                                <option selected="selected" disabled>Option</option>
+                                @if (Model.roles != null)
+                                {
+                                    foreach (var item in Model.roles)
+                                    {
+                                       <option @(Model.RoleId == item.RoleId ? "selected" : "") value="@item.RoleId">@item.RoleName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Shop</label>
+                            <select class="form-control" name="ShopId" required>
+                                <option selected="selected" disabled>Option</option>
+                                @if (Model.shops != null)
+                                {
+                                    foreach (var item in Model.shops)
+                                    {
+                                      <option @(Model.ShopId == item.ShopId ? "selected" : "") value="@item.ShopId">@item.ShopName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Physical Address</label>
+                            <textarea name="PhysicalAddress" class="form-control">@Model.PhysicalAddress</textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Contact Address</label>
+                            <textarea name="ContactAddress" class="form-control">@Model.ContactAddress</textarea>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-actions left">
+                <input type="hidden" name="id" value="@Model.UserId">
+                <button type="submit" class="btn default blue-stripe"> Save</button>
+                <a href="@Url.Action("Index","User")" class="btn default green-stripe"> Back</a>
+            </div>
+        </form>
+    </div>
+</div>
