@@ -17,10 +17,10 @@ namespace Kweb.Controllers
         // GET:User
         public ActionResult Index()
         {
-            List<vwUser> users = new List<vwUser>();
+            List<User> users = new List<User>();
             using (var db = new BEntities())
             {
-                users = db.vwUsers.ToList();
+                users = db.Users.ToList();
             }
             return View(users);
         }

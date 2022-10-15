@@ -26,7 +26,6 @@
         <EntityTypeShape EntityType="BModel.Stock" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="BModel.TaxType" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BModel.Unit" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="BModel.User" Width="1.5" PointX="7.75" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BModel.Menu" Width="1.5" PointX="14.75" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BModel.vwBank" Width="1.5" PointX="6.75" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BModel.vwBrand" Width="1.5" PointX="8.75" PointY="15.5" IsExpanded="true" />
@@ -52,14 +51,15 @@
         <AssociationConnector Association="BModel.FK_Products_Brands" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_Expenses_ExpenseTypes" ManuallyRouted="false" />
-        <AssociationConnector Association="BModel.FK_Expenses_Users" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_Incomes_IncomeTypes" ManuallyRouted="false" />
-        <AssociationConnector Association="BModel.FK_Incomes_Users" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_Products_TaxTypes" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_Products_Units" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_SaleDetails_Products" ManuallyRouted="false" />
         <AssociationConnector Association="BModel.FK_Stocks_Products" ManuallyRouted="false" />
         <EntityTypeShape EntityType="BModel.vwReceivingReport" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="BModel.User" Width="1.5" PointX="7.75" PointY="3.125" />
+        <AssociationConnector Association="BModel.FK_Expenses_Users" />
+        <AssociationConnector Association="BModel.FK_Incomes_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

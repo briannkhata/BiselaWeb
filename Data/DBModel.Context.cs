@@ -46,7 +46,6 @@ namespace BiselaWeb.Data
         public virtual DbSet<Stock> Stocks { get; set; }
         public virtual DbSet<TaxType> TaxTypes { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<vwBank> vwBanks { get; set; }
         public virtual DbSet<vwBrand> vwBrands { get; set; }
@@ -70,5 +69,6 @@ namespace BiselaWeb.Data
         public virtual DbSet<vwUpdateStock> vwUpdateStocks { get; set; }
         public virtual DbSet<vwUser> vwUsers { get; set; }
         public virtual DbSet<vwReceivingReport> vwReceivingReports { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
